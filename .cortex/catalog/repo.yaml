@@ -1,0 +1,13 @@
+openapi: 3.0.1
+info:
+  title: "Repository: testing-a-12-05-23"
+  description: "something"
+  x-cortex-git:
+    github:
+      basepath: "."
+      repository: testing-a-12-05-23
+  x-cortex-tag: debug-repo-testing-a-12-05-23
+  x-cortex-type: service
+  x-cortex-owners:
+  - name: team-gtag
+    type: GROUP

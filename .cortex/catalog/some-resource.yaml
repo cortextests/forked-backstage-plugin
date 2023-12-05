@@ -1,0 +1,6 @@
+openapi: 3.0.1
+info:
+    title: Test Resource in testing-a-12-05-23
+    description: "something"
+    x-cortex-type: s3
+    x-cortex-tag: debug-s3-testing-a-12-05-23
