@@ -1,19 +1,30 @@
-/*
- * Copyright 2022 Cortex Applications, Inc.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 module.exports = {
-  extends: ['@cortexapps/eslint-config-oss'],
-  ignorePatterns: ['dist/*', 'dist-types/*', 'node_modules/*'],
+  env: {
+    browser: true,
+    es2021: true,
+  },
+  extends: [
+    "plugin:react/jsx-runtime",
+    "plugin:react-hooks/recommended",
+    "standard-with-typescript",
+    "prettier",
+  ],
+  overrides: [],
+  parserOptions: {
+    ecmaVersion: "latest",
+    project: "tsconfig.json",
+    sourceType: "module",
+    tsconfigRootDir: __dirname,
+  },
+  plugins: ["react"],
+  rules: {
+    // conflicts with no-extra-boolean-cast
+    "@typescript-eslint/strict-boolean-expressions": "off",
+    "no-console": ["error", { allow: ["warn", "error"] }],
+  },
+  settings: {
+    react: {
+      version: "detect",
+    },
+  },
 };
